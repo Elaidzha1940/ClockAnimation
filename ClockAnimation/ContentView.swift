@@ -13,8 +13,8 @@ struct SecondsHand: Shape {
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.midX, y: 370))
+        path.move(to: CGPoint(x: rect.midX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.midY - rect.height * 0.21))
         return path
     }
 }
@@ -23,8 +23,8 @@ struct MinutesHand: Shape {
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.midX, y: 240))
+        path.move(to: CGPoint(x: rect.midX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.midY - rect.height * 0.15))
         return path
     }
 }
@@ -33,8 +33,8 @@ struct HourHand: Shape {
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.midX, y: 200))
+        path.move(to: CGPoint(x: rect.midX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.midY - rect.height * 0.18))
         return path
     }
 }
@@ -63,6 +63,7 @@ struct ContentView: View {
                             StrokeStyle(lineWidth: 10))
                 .foregroundColor(.white)
                 .rotationEffect(.init(degrees: Double(angleRotationHour)))
+            
             
             MinutesHand()
                 .stroke(style:
