@@ -42,6 +42,8 @@ struct ContentView: View {
     }
     
     var body: some View {
+        @State var angleRotationSeconds = 0
+        @State var seconds = 1.0
         
         ZStack {
             
@@ -55,7 +57,13 @@ struct ContentView: View {
                 .stroke(style:
                             StrokeStyle(lineWidth: 10))
                 .foregroundColor(.white)
+                .rotationEffect(.init(degrees: Double(angleRotationSeconds)))
+        }
+        .onAppear {
             
+            Timer.scheduledTimer(withTimeInterval: seconds, repeats: true) { timer in
+                angleRotationSeconds += 1
+            }
         }
         .preferredColorScheme(.dark)
     }
