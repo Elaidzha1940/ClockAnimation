@@ -60,20 +60,20 @@ struct ContentView: View {
             
             HourHand()
                 .stroke(style:
-                            StrokeStyle(lineWidth: 10))
+                            StrokeStyle(lineWidth: 10, lineCap: .round))
                 .foregroundColor(.white)
                 .rotationEffect(.init(degrees: Double(angleRotationHour)))
             
             
             MinutesHand()
                 .stroke(style:
-                            StrokeStyle(lineWidth: 10))
+                            StrokeStyle(lineWidth: 10, lineCap: .round))
                 .foregroundColor(.white)
                 .rotationEffect(.init(degrees: Double(angleRotationMinutes)))
             
             SecondsHand()
                 .stroke(style:
-                            StrokeStyle(lineWidth: 10))
+                            StrokeStyle(lineWidth: 10, lineCap: .round))
                 .foregroundColor(.white)
                 .rotationEffect(.init(degrees: Double(angleRotationSeconds)))
         }
